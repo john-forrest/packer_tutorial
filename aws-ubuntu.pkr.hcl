@@ -4,6 +4,10 @@ packer {
       version = ">= 1.2.8"
       source  = "github.com/hashicorp/amazon"
     }
+    vagrant = {
+      version = ">= 1.1.1"
+      source  = "github.com/hashicorp/vagrant"
+    }
   }
 }
 
@@ -71,4 +75,6 @@ build {
   provisioner "shell" {
     inline = ["echo This provisioner runs last"]
   }
+
+  post-processor "vagrant" {}
 }
